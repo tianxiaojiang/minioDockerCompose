@@ -1,0 +1,20 @@
+version: "3"
+services:
+  minio:
+    build:
+      context: ./service
+    container_name: minio_server
+    ports:
+      - "${HTTP_HOST_PORT}:9000"
+      - "${CONSOLE_HOST_PORT}:9090"
+    volumes:
+      - ${CONF_FILE}:/etc/config.env:rw
+      - ${DATA_DIR}:/mnt/data
+    environment:
+      MINIO_CONFIG_ENV_FILE: "/etc/config.env"
+    restart: always
+    networks:
+      - default
+
+networks:
+  default:
