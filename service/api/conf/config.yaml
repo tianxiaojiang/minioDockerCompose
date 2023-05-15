@@ -3,7 +3,7 @@ app:
   env: local
   port: 8080
   appname: storeObj
-  appurl: http://127.0.0.1:8080
+  appurl: http://minio.api.cutveg.cn
   signkey: marttinTian
 
 minio:
