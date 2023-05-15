@@ -1,8 +1,9 @@
 version: "3"
 services:
-  minio:
+  minio_server:
     build:
-      context: ./service
+      context: ./service/server
+    hostname: ${SERVER_HOST}
     container_name: minio_server
     ports:
       - "${HTTP_HOST_PORT}:9000"
@@ -10,8 +11,24 @@ services:
     volumes:
       - ${CONF_FILE}:/etc/config.env:rw
       - ${DATA_DIR}:/mnt/data
+    expose:
+      - 9000
     environment:
       MINIO_CONFIG_ENV_FILE: "/etc/config.env"
+    restart: always
+    networks:
+      - default
+
+  minio_api:
+    build:
+      context: ./service/api
+    container_name: minio_api
+    ports:
+      - "${MINIO_API_PORT}:8080"
+    volumes:
+      - ${MINIO_API_CONF}:/etc/minio-api/config.yaml:rw
+    environment:
+      VIPER_CONFIG: "/etc/minio-api/config.yaml"
     restart: always
     networks:
       - default

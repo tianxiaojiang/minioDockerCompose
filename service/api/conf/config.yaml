@@ -1,0 +1,14 @@
+# 基本
+app:
+  env: local
+  port: 8080
+  appname: storeObj
+  appurl: http://127.0.0.1:8080
+  signkey: marttinTian
+
+minio:
+  accesskey: "UBw1kTHcmaVHollU"
+  secretkey: "mjzgkdJWBKLGpSSsfYbaJU5C6tCZOg6I"
+  # 这里的host，与 .env 中配置 SERVER_HOST 一致
+  endpoint: "minio-server.cutveg.cn:9000"
+  usessl: false
