@@ -10,5 +10,5 @@ minio:
   accesskey: "UBw1kTHcmaVHollU"
   secretkey: "mjzgkdJWBKLGpSSsfYbaJU5C6tCZOg6I"
   # 这里的host，与 .env 中配置 SERVER_HOST 一致
-  endpoint: "minio-server.cutveg.cn:9000"
+  endpoint: "minio.server.cutveg.cn:9000"
   usessl: false
