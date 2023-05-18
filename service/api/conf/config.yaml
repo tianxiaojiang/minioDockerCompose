@@ -4,7 +4,7 @@ app:
   port: 8080
   appname: storeObj
   appurl: http://minio.api.cutveg.cn
-  signkey: marttinTian
+  signkey: muvwg22bDuSk
 
 minio:
   accesskey: "UBw1kTHcmaVHollU"
